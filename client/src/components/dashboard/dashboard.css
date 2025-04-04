@@ -1,0 +1,79 @@
+.dashboard-stat-card {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,.1);
+  border-radius: 0.5rem;
+  background: white;
+  border: none;
+  overflow: hidden;
+}
+
+.dashboard-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 7px 14px rgba(0,0,0,.1);
+}
+
+.dashboard-stat-card h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-stat-card h6 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dashboard-stat-card p {
+  font-size: 1rem;
+}
+
+/* EMI card styles */
+.emi-due-soon {
+  background-color: rgba(255, 193, 7, 0.1);
+}
+
+.emi-overdue {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.emi-paid {
+  background-color: rgba(40, 167, 69, 0.05);
+}
+
+/* Chart container styles */
+.chart-container {
+  padding: 1rem;
+  height: 300px;
+}
+
+/* Table hover effects */
+.table-hover tbody tr:hover {
+  background-color: rgba(13, 110, 253, 0.05);
+  cursor: pointer;
+}
+
+/* Status badge customization */
+.loan-status-badge {
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+}
+
+/* Animation for dashboard cards */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dashboard-stat-card {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.dashboard-stat-card:nth-child(1) { animation-delay: 0.1s; }
+.dashboard-stat-card:nth-child(2) { animation-delay: 0.2s; }
+.dashboard-stat-card:nth-child(3) { animation-delay: 0.3s; }
+.dashboard-stat-card:nth-child(4) { animation-delay: 0.4s; } 
