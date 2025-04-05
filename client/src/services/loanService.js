@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getAuthHeader } from './authService';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
 // Apply for a loan
 export const applyForLoan = async (loanData) => {
