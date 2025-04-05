@@ -1,0 +1,25 @@
+services:
+  # Client service
+  - name: loan-management-client
+    type: web
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: ./client/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://loan-management-server.onrender.com/api
+  
+  # Server service
+  - name: loan-management-server
+    type: web
+    plan: free
+    buildCommand: cd server && npm install
+    startCommand: cd server && node server.js
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MONGO_URI
+        sync: false # You'll need to set this manually from the Render dashboard
+      - key: NODE_ENV
+        value: production 

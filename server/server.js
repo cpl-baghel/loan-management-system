@@ -18,8 +18,17 @@ dotenv.config();
 // Initialize Express app
 const app = express();
 
+// CORS configuration
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'production' 
+    ? 'https://loan-management-client.onrender.com' 
+    : 'http://localhost:3000',
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(fileUpload({
   limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
